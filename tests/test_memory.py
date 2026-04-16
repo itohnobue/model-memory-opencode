@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 # Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent / ".claude" / "tools"))
+sys.path.insert(0, str(Path(__file__).parent.parent / ".opencode" / "tools"))
 
 import memory
 
@@ -19,8 +19,8 @@ import memory
 def temp_project():
     """Create a temporary project directory for testing."""
     temp_dir = tempfile.mkdtemp()
-    claude_dir = Path(temp_dir) / ".claude"
-    claude_dir.mkdir(parents=True, exist_ok=True)
+    tools_dir = Path(temp_dir) / ".opencode"
+    tools_dir.mkdir(parents=True, exist_ok=True)
 
     # Override paths
     original_project_root = memory.PROJECT_ROOT
@@ -31,7 +31,7 @@ def temp_project():
     memory.PROJECT_ROOT = Path(temp_dir)
     memory.KNOWLEDGE_FILE = Path(temp_dir) / "knowledge.md"
     memory.SESSION_FILE = Path(temp_dir) / "session.md"
-    memory.SESSION_POINTER_FILE = claude_dir / "current_session"
+    memory.SESSION_POINTER_FILE = tools_dir / "current_session"
 
     # Clear any environment variable
     original_env = os.environ.get("MEMORY_SESSION")

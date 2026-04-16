@@ -1,22 +1,22 @@
 # Model Memory
 
-Persistent memory for Claude Code: **knowledge** (permanent) + **session** (temporary).
+Persistent memory for OpenCode: **knowledge** (permanent) + **session** (temporary).
 
 ## Why You Need This
 
-Claude Code forgets everything between sessions and after context compaction. This tool gives it persistent memory.
+LLMs forget everything between sessions and after context compaction. This tool gives them persistent memory.
 
 - **Long-term knowledge** (`knowledge.md`): Architecture, gotchas, patterns, configs
 - **Session memory** (`session.md`): Plans, todos, progress — survives compaction
-- **Session isolation**: Multiple CLI/agents can work in parallel without conflicts
+- **Session isolation**: Multiple sessions/agents can work in parallel without conflicts
 
 **Benefits**: No rediscovering the same patterns. Faster debugging. Lower token usage. Work resumes seamlessly after interruptions.
 
 ## Quick Start
 
-1. Copy `.claude/` folder to your project
-2. Add `CLAUDE.md` contents to your project instructions
-3. Done — Claude will automatically save discoveries and track work
+1. Copy `.opencode/` folder to your project
+2. Add `AGENTS.md` to your project root
+3. Done — OpenCode will automatically save discoveries and track work
 
 ## Features
 

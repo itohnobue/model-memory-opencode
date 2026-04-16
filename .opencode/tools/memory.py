@@ -2,7 +2,7 @@
 """
 Model Memory Tool v5.1.0 - Session Isolation Edition
 
-A simple, focused persistent memory system for Claude Code.
+A simple, focused persistent memory system for OpenCode.
 Now with session isolation for parallel work.
 
 Features:
@@ -141,7 +141,7 @@ def get_current_session(cli_session: str | None = None) -> str:
     Priority order:
     1. CLI flag (--session / -S)
     2. Environment variable (MEMORY_SESSION)
-    3. Pointer file (.claude/current_session)
+    3. Pointer file (.opencode/current_session)
     4. Default ("default")
     """
     # 1. CLI flag takes precedence
@@ -922,7 +922,7 @@ Session Commands:
 Session Resolution (priority order):
   1. --session / -S flag
   2. MEMORY_SESSION environment variable
-  3. .claude/current_session pointer file
+  3. .opencode/current_session pointer file
   4. "default"
 
 Categories: {', '.join(CATEGORIES)}

@@ -12,7 +12,7 @@ Two-tier: **Knowledge** (`knowledge.md`) permanent, **Session** (`session.md`) t
 ## Knowledge
 
 ```bash
-memory.sh add <category> "<content>" [--tags a,b,c]
+./.opencode/tools/memory.sh add <category> "<content>" [--tags a,b,c]
 ```
 
 | Category | Save When |
@@ -41,12 +41,12 @@ Tracks current task. Persists until cleared.
 **Categories:** `plan`, `todo`, `progress`, `note`, `context`, `decision`, `blocker`. **Statuses:** `pending` → `in_progress` → `completed` | `blocked`.
 
 ```bash
-memory.sh session add todo "Task" --status pending
-memory.sh session show                    # View current
-memory.sh session update <id> --status completed
-memory.sh session delete <id>
-memory.sh session clear                   # Current only
-memory.sh session clear --all             # ALL sessions
+./.opencode/tools/memory.sh session add todo "Task" --status pending
+./.opencode/tools/memory.sh session show                    # View current
+./.opencode/tools/memory.sh session update <id> --status completed
+./.opencode/tools/memory.sh session delete <id>
+./.opencode/tools/memory.sh session clear                   # Current only
+./.opencode/tools/memory.sh session clear --all             # ALL sessions
 ```
 
 ## Checkpoints
@@ -54,19 +54,19 @@ memory.sh session clear --all             # ALL sessions
 Save after every significant step. One active checkpoint (delete previous first). Under 500 chars.
 
 ```bash
-memory.sh session add context "CHECKPOINT: [task] | DONE: [steps] | CURRENT: [now] | NEXT: [remaining] | FILES: [key files] | DECISIONS: [choices] | BUILD/TEST: [commands]"
+./.opencode/tools/memory.sh session add context "CHECKPOINT: [task] | DONE: [steps] | CURRENT: [now] | NEXT: [remaining] | FILES: [key files] | DECISIONS: [choices] | BUILD/TEST: [commands]"
 ```
 
-After compaction: run `memory.sh session show` immediately to restore state.
+After compaction: run `./.opencode/tools/memory.sh session show` immediately to restore state.
 
 **Rules:** One checkpoint at a time. Always include DONE and NEXT. Don't skip — losing state costs more.
 
 ## Multi-Session
 
-Multiple CLI instances work without conflicts. Resolution: `-S` flag > `MEMORY_SESSION` env > `.claude/current_session` file > `"default"`.
+Multiple CLI instances work without conflicts. Resolution: `-S` flag > `MEMORY_SESSION` env > `.opencode/current_session` file > `"default"`.
 
 ```bash
-memory.sh session use feature-auth        # Switch session
-memory.sh -S other session add todo "..." # One-off
-memory.sh session sessions                # List all
+./.opencode/tools/memory.sh session use feature-auth        # Switch session
+./.opencode/tools/memory.sh -S other session add todo "..." # One-off
+./.opencode/tools/memory.sh session sessions                # List all
 ```
