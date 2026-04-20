@@ -51,7 +51,7 @@ Tracks current task. Persists until cleared.
 
 ## Checkpoints
 
-Save after every significant step. One active checkpoint (delete previous first). Under 500 chars.
+Save after **every step** — no exceptions. One active checkpoint (delete previous first). Under 500 chars.
 
 ```bash
 ./.opencode/tools/memory.sh session add context "CHECKPOINT: [task] | DONE: [steps] | CURRENT: [now] | NEXT: [remaining] | FILES: [key files] | DECISIONS: [choices] | BUILD/TEST: [commands]"
